@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-back-button slot="start"></ion-back-button>
+  <ion-title >Menu Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-card #slidingItem>
+  <ion-card-header>
+    <ion-card-subtitle>Recipe</ion-card-subtitle>
+    <ion-card-title>{{title}}</ion-card-title>
+    <ion-card-subtitle color="danger">
+      {{price | currency:'Nu:'}}
+  </ion-card-subtitle>
+    <ion-img src="{{img}}"></ion-img>
+  </ion-card-header>
+  <ion-card-content>
+    {{content}}
+  </ion-card-content>
+</ion-card>
+</ion-content>

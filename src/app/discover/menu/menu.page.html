@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-menu-button slot="start"></ion-menu-button>
+  <ion-title >Our Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-searchbar showCancelButton="true" animated (ionChange)="menu($event)" [(ngModel)]="searchValue" color="light"></ion-searchbar>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-slides pager="true" [options]="slidingTime">
+          <ion-slide>
+            <ion-img src="https://www.dominos.co.in/files/items/_1346164951.jpg" style="height:200px; width:100%">
+            </ion-img>
+          </ion-slide>
+          <ion-slide>
+            <ion-img src="../../../assets/free.png" style="height:200px; width:100%">
+      
+            </ion-img>
+          </ion-slide>
+          <ion-slide>
+            <ion-img src="https://www.dominos.co.in/files/items/MicrosoftTeams-image_(10).png" style="height:200px; width:100%">
+            </ion-img>
+          </ion-slide>
+          <ion-slide>
+            <ion-img  src="https://www.dominos.co.in/files/items/MicrosoftTeams-image_(20).png" style="height:200px; width:100%">
+            </ion-img>
+          </ion-slide>
+          <ion-slide>
+            <ion-img  src="https://www.bacinos.com/wp-content/uploads/2021/05/30-Seafood-Pizza-Recipes.jpg" style="height:200px; width:100%">
+            </ion-img>
+          </ion-slide>
+          <ion-slide>
+            <ion-img  src="https://www.dominos.co.in/files/items/stuffed-garlic-breadstick_1346070564.webp" style="height:200px; width:100%">
+            </ion-img>
+          </ion-slide>
+          <ion-slide>
+            <ion-img  src="https://www.dominos.co.in/files/items/thin-crust.jpg" style="height:200px; width:100%">
+            </ion-img>
+          </ion-slide>
+          <ion-slide>
+            <ion-img  src="https://www.pngitem.com/pimgs/m/456-4563296_crispychicken-crispy-fried-chicken-burgers-hd-png-download.png" style="height:200px; width:100%">
+            </ion-img>
+          </ion-slide>
+          <ion-slide>
+            <ion-img  src="https://www.picng.com/upload/pasta/png_pasta_15088.png" style="height:200px; width:100%">
+            </ion-img>
+          </ion-slide>
+          <ion-slide>
+            <ion-img  src="https://www.seekpng.com/png/detail/13-132422_vector-royalty-free-library-pasta-vector-penne-pasta.png" style="height:200px; width:100%">
+            </ion-img>
+          </ion-slide>
+          </ion-slides>
+      </ion-card>
+    
+    </ion-col>
+  </ion-row>
+  <h2 class="topi">Our Menu Available</h2>
+    <ion-card *ngFor="let recipe of menuArray" #slidingItem >
+      <ion-card-header>
+        <ion-card-subtitle>Recipe</ion-card-subtitle>
+        <ion-card-title>{{recipe.title}}</ion-card-title>
+        <ion-card-subtitle color="danger">
+          {{recipe.price | currency:'Nu:'}}
+        </ion-card-subtitle>
+
+        <ion-img src="{{recipe.img}}" (click)="getId(recipe.id)"></ion-img>
+      </ion-card-header>
+    <ion-card-content>
+      {{recipe.content}}
+    </ion-card-content>
+    <div class="bt">
+      <ion-button (click)="presentAlert(recipe.id)" class="Now">Order Now</ion-button>
+    </div>
+  </ion-card>
+</ion-content>
+  
+
+
+<!-- <ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <h1>Slide 1</h1>
+    </ion-slide>
+    <ion-slide>
+      <h1>Slide 2</h1>
+    </ion-slide>
+    <ion-slide>
+      <h1>Slide 3</h1>
+    </ion-slide>
+  </ion-slides>
+</ion-content> -->
